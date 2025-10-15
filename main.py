@@ -7,17 +7,24 @@ import pygame
 from constants import *
 
 def main():
+    #initialize pygame
     pygame.init()
 
+    #set screen width and height
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+    #set clock object
     clock = pygame.time.Clock()
 
+    #display starting messages
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
 
+    #initialize delta time variable
     dt = 0
 
+    #set loop to draw screen
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
