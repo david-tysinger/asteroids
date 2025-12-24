@@ -6,6 +6,9 @@ import pygame
 # import from constants file
 from constants import *
 
+# import logger module
+from logger import log_state
+
 def main():
     #initialize pygame
     pygame.init()
@@ -23,6 +26,9 @@ def main():
 
     #initialize delta time variable
     dt = 0
+
+    #call logger
+    log_state()
 
     #set loop to draw screen
     while True:
