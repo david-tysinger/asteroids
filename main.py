@@ -6,6 +6,12 @@ import pygame
 #import Player class
 from player import Player
 
+#import Asteroid class
+from asteroid import Asteroid
+
+#import AsteroidField class
+from asteroidfield import AsteroidField
+
 # import from constants file
 from constants import *
 
@@ -30,13 +36,22 @@ def main():
     #initialize delta time variable
     dt = 0
 
+    #create asteroid group
+    asteroids = pygame.sprite.Group()
+
     #create player groups
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+
+    Asteroid.containers = (asteroids, updatable, drawable)
     Player.containers = (updatable, drawable)
+    AsteroidField.containers = (updatable, )
 
     #instantiate Player object
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
+    #instantiate AsteroidField
+    asteroidfield = AsteroidField()
 
     #set loop to draw screen
     while True:
