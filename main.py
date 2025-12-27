@@ -3,6 +3,9 @@
 # throughout this file
 import pygame
 
+#import Player class
+from player import Player
+
 # import from constants file
 from constants import *
 
@@ -27,7 +30,8 @@ def main():
     #initialize delta time variable
     dt = 0
 
-
+    #instantiate Player object
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     #set loop to draw screen
     while True:
@@ -36,6 +40,7 @@ def main():
                 return
         log_state()
         screen.fill((0, 0, 0))
+        player.draw(screen)
         pygame.display.flip()
         clock.tick(60)
         dt = clock.tick(60) / 1000
